@@ -1,0 +1,41 @@
+<!doctype html public>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width; height=device-height; initial-scale=1.0; maximum-scale=1.0;" /> 
+		<title>jFuzz</title>
+		<style type="text/css">
+			html, body {
+                background: #000;
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#003399');
+				background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#003399));
+				background: -moz-linear-gradient(top, #000000, #003399); 
+				background: linear-gradient(top,  #000000, #003399);
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+				height: 100%;
+			}
+			.page { width: 900px; background: transparent; height: 100%; margin: 0 auto; position: relative; }
+			.star { position: absolute; -moz-transition: all 0.3s ease-out; -o-transition: all 0.3s ease-out; -webkit-transition: all 0.3s ease-out; -ms-transition: all 0.3s ease-out; transition: all 0.3s ease-out; }
+			* {
+			  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+			  -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+			  -webkit-tap-highlight-color: transparent; 
+			  -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+			  -webkit-tap-highlight-color: rgba(0,0,0,0); 
+			}
+			#emitter0 { position: relative; top: 200px; left: 300px; width: 48px; height: 48px; }
+		</style>
+		<script type="text/javascript" src="../lib/jquery.js"></script>
+		<script type="text/javascript" src="../src/jquery.jfuzz.js"></script>
+		<script type="text/javascript" >
+		$(function() {
+			$(".emitter").jFuzz({background:'../images/spark32x32.png',randPos:true,velocityRange:[6,10],maxParticles:300,emitionRate:3,frameRate:30,particleWidth:32,particleHeight:32,gravity:0.3,shrink:.92,startScale:2});
+		});
+		</script>
+	</head>
+	<body>
+		<div id="emitter0" class="emitter"></div>
+	</body>
+</html>
